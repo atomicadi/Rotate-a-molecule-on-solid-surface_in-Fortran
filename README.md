@@ -1,5 +1,5 @@
 # Rotate-a-molecule-on-solid-surface
-To rotate a molecule on a solid surface, at first the center of mass (com) of that moleculed needed to calculate, then the molecular coordinates have to be changed w.r.t. the com, then for rotation, C$_{z}$ rotation matrix is needed to multiply with the coordinates of the molecule.
+To rotate a molecule on a solid surface, at first the center of mass (com) of that moleculed needed to calculate, then the molecular coordinates have to be changed w.r.t. the com, then for rotation, Cz rotation matrix is needed to multiply with the coordinates of the molecule.
 
 1. Here, we used three codes, in the first code, com is calculated and it is subroutined by giving the coordinates of the molecule in the main.f90 code.
 2. In the com.f90 code, all the matrix values values are printed in a .xyz file and only the com value is printed in .txt file which is used later in the main.f90 code.
