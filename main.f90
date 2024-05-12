@@ -7,15 +7,14 @@ program main  !Written by Aditya Barman
        character(len=100) :: TPBZ_COM, TPBZ_Rot
 
        num_atom= 976
-
-   ! Open the input file "Au-111-8*12*1-core-TPBZ.xyz"
-    open(unit=10, file= "Au-111-8*12*1-core-TPBZ.xyz")
+      ! Open the input file "Au-111-8*12*1-core-TPBZ.xyz"
+      open(unit=10, file= "Au-111-8*12*1-core-TPBZ.xyz")
      
      
-   ! Skip the first 2 lines
-    do i = 1, 2
+     ! Skip the first 2 lines
+     do i = 1, 2
         read(10,*)
-    end do
+     end do
 
     ! Read the coordinates of the Au atom
     do i = 1, 826
@@ -31,13 +30,12 @@ program main  !Written by Aditya Barman
     do i = 1, 72
         read(10, '(5x, 3F12.6)') coor_C(i,:)
     end do
-
     close(unit=10)
  
     !call the subroutine for calculation center of mass
     call calculate_COM (coor_H, coor_C)
 
-    !txt file is generated in the com.f90 file in which only com is written
+    !.txt file is generated in the com.f90 file in which only com is written, open that file
     open(unit=30, file="COM-TPBZ.txt")
     read(30, '(3F12.6)') x_COM, y_COM, z_COM
     close(unit=30)
@@ -45,7 +43,7 @@ program main  !Written by Aditya Barman
      ! Open the input file "Au-111-8*12*1-core-TPBZ.xyz" again
      open(unit=10, file= "Au-111-8*12*1-core-TPBZ.xyz")
 
-      ! Skip the first two lines
+     ! Skip the first two lines
      do i = 1, 2
         read(10, *)
      end do
@@ -85,9 +83,7 @@ program main  !Written by Aditya Barman
     call system('mkdir ' // "TPBZ_Rot")
     call system('mv ' // 'Au-111-8-12-1-core-TPBZ-new.xyz'  // ' ' // 'TPBZ_Rot'  // '/')
      
-     
-     
-    write(*, *) "new_coor.xyz file is generated successfully by Schrodinger"
+write(*, *) "new_coor.xyz file is generated successfully by Schrodinger"
 end program main
        
          
