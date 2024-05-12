@@ -6,7 +6,6 @@ subroutine calculate_COM(coor_H, coor_C)
     
     mass_C = 12.011
     mass_H = 1.00784
-    
     mass_tot = (72 * mass_C) + (78 * mass_H)  
      
    do i = 1, 72
