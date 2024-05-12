@@ -1,4 +1,4 @@
-program rotation !code written by Aditya Barman
+program rotation !written by Aditya Barman
        implicit none
        real :: coor_Au(826,4),  coor_H_C(150,4), coor_H_C_2(150,3), coor_H_2(78,3), rot_mat(3,3)     
        real :: rot_coor_H_C(150,3), pi, dtor, rot_value 
@@ -9,7 +9,7 @@ program rotation !code written by Aditya Barman
        pi = 3.1415926535897932d0
        dtor = pi/180
 
-       open(unit=10, file= "Au-111-8-12-1-core-TPBZ-new-2.xyz")
+       open(unit=10, file= "Au-111-8-12-1-core-TPBZ-new.xyz")
        do i = 1,2
          read(10,*)
        end do
@@ -25,7 +25,7 @@ program rotation !code written by Aditya Barman
        end do
        close(unit=10)
 
-       open(unit=10, file= "Au-111-8-12-1-core-TPBZ-new-2.xyz")
+       open(unit=10, file= "Au-111-8-12-1-core-TPBZ-new.xyz")
        do i = 1, 828
          read(10,*)
        end do
@@ -36,9 +36,10 @@ program rotation !code written by Aditya Barman
        end do
        close(unit=10)
        
-       do i = 1, 360
+   do i = 1, 360
          rot_value = i * dtor
 
+         !setting the Cz rotation matrix
          rot_mat = reshape([cos(rot_value), -sin(rot_value), 0.0, &
                             sin(rot_value), cos(rot_value), 0.0, &
                             0.0, 0.0, 1.0],[3,3])
@@ -58,18 +59,12 @@ program rotation !code written by Aditya Barman
          do j= 1, 150
             write(unit_out, '(a2, 3F12.6)') coor_H_C(j,1), rot_coor_H_C(j,:)
          end do
-
-         
          close(unit=unit_out)
-     end do
- 
-  write(*,*)"files are generated successfully by Schrodinger"
+    end do
+    write(*,*)"files are generated successfully by Schrodinger"
 
-
-
-  contains
-
-    ! Function to convert integer to string
+contains
+   ! Function to convert integer to string
     function int2str(i) result(s)
         integer, intent(in) :: i
         character(len=10) :: s
