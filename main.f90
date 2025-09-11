@@ -1,3 +1,6 @@
+! Aditya Barman, Project Associate, Maniapl University Jaipur, India; April 22, 2024
+! Email: atomicadi2023@gmail.com
+
 program main  !Written by Aditya Barman
        implicit none
        real :: coor_Au(826,3), coor_C(72,3), coor_H(78,3), COM(1,3), x_COM, y_COM, z_COM
@@ -85,5 +88,3 @@ program main  !Written by Aditya Barman
      
 write(*, *) "new_coor.xyz file is generated successfully by Schrodinger"
 end program main
-       
-         
