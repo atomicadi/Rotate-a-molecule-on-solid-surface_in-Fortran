@@ -7,7 +7,6 @@ Herein 3 files are generated (com.f90, main.f90, and rot.90) in which com.90 is 
 
 $$
 X_{COM} = \frac{\sum_i m_i x_i}{\sum_i m_i}
-
 $$
 
 
