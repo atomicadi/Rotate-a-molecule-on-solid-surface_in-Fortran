@@ -20,10 +20,19 @@ $$
 
 </p>
 
-On the other hand, the file **main.f90** is the mother file which links the subroutine file and input of user to generate the new coordinate file. Initally, the coordinates of whole system (M on surface) is stored in a matrix format and upon unchanging the coordinates of Au (111) surface, only the coordinates of M is taken into the account to calculate the COM. Then using the values of COM, the whole coordinates is set with respect to the COM by just substracting the COM from the whole system coordinates (generally, put the COM at origin to rotate easily along Z axis) which gives then new coordinate file.
+On the other hand, the file **main.f90** is the mother file which links the subroutine file and input coordinates given by the user to generate the new coordinate file. Initally, the coordinates of whole system (M on surface) is stored in a matrix format and upon unchanging the coordinates of Au (111) surface, only the coordinates of M is taken into the account to calculate the COM. Then using the values of COM, the whole coordinates is set with respect to the COM by just substracting the COM from the whole system coordinates (generally, put the COM at origin to rotate easily along Z axis) which gives then new coordinate file.
 
-Finally, the file **rot.90** which conatins the calculations for rotating the M on Au (111) surface will use the new coordinate file and aftering collecting the the whole geometry as matrix form, it will multiply the C<sub>z</sub> rotation matrix with the coordinates of M by keeping the coordinates of Au (111) unchange to rotate M. For each 1° iteration upto 360°, it will change the degree value to radian and put it into the C<sub>z</sub> rotation matrix and proceed to multiply with the partial matrix of M to generate an output file. The form of C<sub>z</sub> matrix is
+Finally, by putting the name of new coordinate file into the file **rot.90** which conatins the calculations for rotating the M on Au (111) surface will use the new coordinate file and aftering collecting the the whole geometry as matrix form, it will multiply the C<sub>z</sub> rotation matrix with the coordinates of M by keeping the coordinates of Au (111) unchange to rotate M. For each 1° iteration upto 360°, it will change the degree value to radian and put it into the C<sub>z</sub> rotation matrix and proceed to multiply with the partial matrix of M to generate an output file. The form of C<sub>z</sub> matrix is
 | cosθ | - sinθ | 0 |
 |------|--------|---|
 | sinθ |  cosθ  | 0 |
 |   0  |    0   | 1 |
+
+One can simply achieve the results by following these simple commands:
+```
+gfortran -o calc com.f90 main.f90
+./calc
+gfortran rot.f90
+./a.out
+```
+
