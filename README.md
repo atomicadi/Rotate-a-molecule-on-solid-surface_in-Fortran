@@ -9,5 +9,13 @@ $$
 X_{COM} = \frac{\sum_i m_i x_i}{\sum_i m_i}
 $$
 
+$$
+Y_{COM} = \frac{\sum_i m_i y_i}{\sum_i m_i}
+$$
+
+$$
+Z_{COM} = \frac{\sum_i m_i z_i}{\sum_i m_i}
+$$
+
 
 </p>
