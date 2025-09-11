@@ -1,8 +1,14 @@
 # Rotate-a-molecule-on-solid-surface
 ![image alt](https://github.com/atomicadi/Rotate-a-molecule-on-solid-surface_in-Fortran/blob/d832478bfa757631839e903692e115ac0dd57e12/rot_represent.png)
-To rotate a molecule on a solid surface, at first the center of mass (com) of that moleculed needed to calculate, then the molecular coordinates have to be changed w.r.t. the com, then for rotation, Cz rotation matrix is needed to multiply with the coordinates of the molecule.
+In this project, a molecule (denoted by "M", in the rest of the README) is rotted on the Au (111) surface through fortran programming.\
+Herein 3 files are generated (com.f90, main.f90, and rot.90) in which com.90 is the subroutine file which contains the pre requirement calculations (center-of-mass (COM)) to rotate M on surface. For calculating the COM, the formula used is,
+<p align="center">
 
-1. Here, three codes are used, in the first code, com is calculated and it is subroutined by giving the coordinates of the molecule in the main.f90 code.
-2. In the com.f90 code, all the matrix values are printed in a .xyz file and only the com value is printed in .txt file which is used later in the main.f90 code.
-3. In the main.f90 code, the coordinates of the solid surface and molecule are shifted w.r.t. com and then a new coordinate.xyz file is generated in a new directory.
-4. In this new directory, the rot.f90 file is moved, in which only the coordines of the molecule is multiplyed with the Cz rotation matrix from 1 to 360 degree by 1 degree rotation each time, by converting the degree into radian.
+
+$$
+X_{COM} = \frac{\sum_i m_i x_i}{\sum_i m_i}
+
+$$
+
+
+</p>
