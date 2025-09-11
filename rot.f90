@@ -1,4 +1,7 @@
-program rotation !written by Aditya Barman
+! Aditya Barman, Project Associate, Maniapl University Jaipur, India; April 22, 2024
+! Email: atomicadi2023@gmail.com
+
+program rotation
        implicit none
        real :: coor_Au(826,4),  coor_H_C(150,4), coor_H_C_2(150,3), coor_H_2(78,3), rot_mat(3,3)     
        real :: rot_coor_H_C(150,3), pi, dtor, rot_value 
