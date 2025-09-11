@@ -1,7 +1,7 @@
 # Rotate a molecule on solid surface in Fortran
 ![image alt](https://github.com/atomicadi/Rotate-a-molecule-on-solid-surface_in-Fortran/blob/d832478bfa757631839e903692e115ac0dd57e12/rot_represent.png)
 In this project, a molecule (denoted by "M", in the rest of the README) is rotated on the Au (111) surface through Fortran programming.\
-Herein 3 files are generated (**com.f90**, **main.f90**, and **rot.90**) in which **com.90** is the subroutine file which contains the pre requirement calculations (center-of-mass (COM)) to rotate M on surface. For calculating the COM, the formula used is,
+Herein 3 files are generated (**com.f90**, **main.f90**, and **rot.90**) in which **com.90** is the subroutine file which contains the pre requirement calculations (center-of-mass (COM)) to rotate M on surface. For calculating the COM, the formulas that are used are,
 <p align="center">
 
 
